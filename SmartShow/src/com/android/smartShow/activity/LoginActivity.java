@@ -4,6 +4,7 @@ package com.android.smartShow.activity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.android.smartShow.R;
 import com.project.template.templateActivity.BaseActivity;
 
 public class LoginActivity extends BaseActivity{
