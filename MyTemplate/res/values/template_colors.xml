@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- action_bar 自定义颜色 -->
+    <color name="action_bar_background">#78C946</color>
+
+    <color name="main_activity_tab_bg">#FAFAFA</color>
+    <color name="white">#ffffff</color>
+
+    <!-- 通用 -->
+    <color name="main_color">#228822</color>
+    <color name="main_color_light">#55bb55</color>
+    <color name="gray">#999999</color>
+
+    <!-- 文字高黑 -->
+    <color name="text_color_high_dark">#333333</color>
+
+    <!-- 文字低黑 -->
+    <color name="text_color_low_dark">#7A7A7A</color>
+
+    <!-- 表单 -->
+    <color name="form_border_color">#aaaaaa</color>
+</resources>

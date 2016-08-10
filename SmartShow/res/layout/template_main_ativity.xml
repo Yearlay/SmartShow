@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fashShow="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fragment_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/divider"
+        android:layout_alignParentTop="true"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/footer"
+        android:background="@color/text_color_low_dark"
+        android:orientation="horizontal" />
+
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="@color/main_activity_tab_bg"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <com.project.template.templateView.ChangeColorIconWithTextView
+            android:id="@+id/tab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            fashShow:template_color="@color/action_bar_background"
+            fashShow:template_icon="@drawable/ic_menu_start_conversation"
+            fashShow:template_text="@string/first_tab_title"
+            fashShow:template_text_size="@dimen/tab_title_text_size" />
+
+        <com.project.template.templateView.ChangeColorIconWithTextView
+            android:id="@+id/tab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            fashShow:template_color="@color/action_bar_background"
+            fashShow:template_icon="@drawable/ic_menu_allfriends"
+            fashShow:template_text="@string/second_tab_title"
+            fashShow:template_text_size="@dimen/tab_title_text_size" />
+
+        <com.project.template.templateView.ChangeColorIconWithTextView
+            android:id="@+id/tab3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            fashShow:template_color="@color/action_bar_background"
+            fashShow:template_icon="@drawable/ic_menu_emoticons"
+            fashShow:template_text="@string/third_tab_title"
+            fashShow:template_text_size="@dimen/tab_title_text_size" />
+
+        <com.project.template.templateView.ChangeColorIconWithTextView
+            android:id="@+id/tab4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingBottom="5dp"
+            fashShow:template_color="@color/action_bar_background"
+            fashShow:template_icon="@drawable/ic_menu_friendslist"
+            fashShow:template_text="@string/fouth_tab_title"
+            fashShow:template_text_size="@dimen/tab_title_text_size" />
+    </LinearLayout>
+</RelativeLayout>

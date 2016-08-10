@@ -1,0 +1,242 @@
+android.support.annotation.Keep
+android.support.v4.app.BackStackState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.BaseFragmentActivityDonut: BaseFragmentActivityDonut()
+android.support.v4.app.BaseFragmentActivityHoneycomb: BaseFragmentActivityHoneycomb()
+android.support.v4.app.Fragment$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentActivity: FragmentActivity()
+android.support.v4.app.FragmentManagerState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentState: android.os.Parcelable$Creator CREATOR
+android.support.v4.app.FragmentTabHost: void setOnTabChangedListener(android.widget.TabHost$OnTabChangeListener)
+android.support.v4.app.FragmentTabHost$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status[] values()
+android.support.v4.content.ModernAsyncTask$Status: android.support.v4.content.ModernAsyncTask$Status valueOf(java.lang.String)
+android.support.v4.media.MediaBrowserCompat$MediaItem: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.MediaDescriptionCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.MediaMetadataCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.RatingCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.MediaSessionCompat$QueueItem: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.MediaSessionCompat$ResultReceiverWrapper: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.MediaSessionCompat$Token: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.ParcelableVolumeInfo: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.PlaybackStateCompat: android.os.Parcelable$Creator CREATOR
+android.support.v4.media.session.PlaybackStateCompat$CustomAction: android.os.Parcelable$Creator CREATOR
+android.support.v4.os.ResultReceiver: android.os.Parcelable$Creator CREATOR
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColor(int)
+android.support.v4.view.PagerTabStrip: void setTabIndicatorColorResource(int)
+android.support.v4.view.PagerTabStrip: int getTabIndicatorColor()
+android.support.v4.view.PagerTabStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.PagerTabStrip: void setBackgroundColor(int)
+android.support.v4.view.PagerTabStrip: void setBackgroundResource(int)
+android.support.v4.view.PagerTabStrip: void setDrawFullUnderline(boolean)
+android.support.v4.view.PagerTabStrip: boolean getDrawFullUnderline()
+android.support.v4.view.PagerTabStrip: int getMinHeight()
+android.support.v4.view.PagerTitleStrip: void setSingleLineAllCaps(android.widget.TextView)
+android.support.v4.view.PagerTitleStrip: void setTextSpacing(int)
+android.support.v4.view.PagerTitleStrip: int getTextSpacing()
+android.support.v4.view.PagerTitleStrip: void setNonPrimaryAlpha(float)
+android.support.v4.view.PagerTitleStrip: void setTextColor(int)
+android.support.v4.view.PagerTitleStrip: void setGravity(int)
+android.support.v4.view.PagerTitleStrip: int getMinHeight()
+android.support.v4.view.ViewPager
+android.support.v4.view.ViewPager: ViewPager(android.content.Context)
+android.support.v4.view.ViewPager: ViewPager(android.content.Context,android.util.AttributeSet)
+android.support.v4.view.ViewPager: void setScrollState(int)
+android.support.v4.view.ViewPager: void setAdapter(android.support.v4.view.PagerAdapter)
+android.support.v4.view.ViewPager: android.support.v4.view.PagerAdapter getAdapter()
+android.support.v4.view.ViewPager: void setOnAdapterChangeListener(android.support.v4.view.ViewPager$OnAdapterChangeListener)
+android.support.v4.view.ViewPager: int getClientWidth()
+android.support.v4.view.ViewPager: void setCurrentItem(int)
+android.support.v4.view.ViewPager: int getCurrentItem()
+android.support.v4.view.ViewPager: void setOnPageChangeListener(android.support.v4.view.ViewPager$OnPageChangeListener)
+android.support.v4.view.ViewPager: void setChildrenDrawingOrderEnabledCompat(boolean)
+android.support.v4.view.ViewPager: int getOffscreenPageLimit()
+android.support.v4.view.ViewPager: void setOffscreenPageLimit(int)
+android.support.v4.view.ViewPager: void setPageMargin(int)
+android.support.v4.view.ViewPager: int getPageMargin()
+android.support.v4.view.ViewPager: void setPageMarginDrawable(android.graphics.drawable.Drawable)
+android.support.v4.view.ViewPager: void setPageMarginDrawable(int)
+android.support.v4.view.ViewPager: void setScrollingCacheEnabled(boolean)
+android.support.v4.view.ViewPager$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.DrawerLayout: void setDrawerElevation(float)
+android.support.v4.widget.DrawerLayout: float getDrawerElevation()
+android.support.v4.widget.DrawerLayout: void setScrimColor(int)
+android.support.v4.widget.DrawerLayout: void setDrawerListener(android.support.v4.widget.DrawerLayout$DrawerListener)
+android.support.v4.widget.DrawerLayout: void setDrawerLockMode(int)
+android.support.v4.widget.DrawerLayout: void setStatusBarBackground(android.graphics.drawable.Drawable)
+android.support.v4.widget.DrawerLayout: android.graphics.drawable.Drawable getStatusBarBackgroundDrawable()
+android.support.v4.widget.DrawerLayout: void setStatusBarBackground(int)
+android.support.v4.widget.DrawerLayout: void setStatusBarBackgroundColor(int)
+android.support.v4.widget.DrawerLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.NestedScrollView: void setNestedScrollingEnabled(boolean)
+android.support.v4.widget.NestedScrollView: int getNestedScrollAxes()
+android.support.v4.widget.NestedScrollView: float getTopFadingEdgeStrength()
+android.support.v4.widget.NestedScrollView: float getBottomFadingEdgeStrength()
+android.support.v4.widget.NestedScrollView: int getMaxScrollAmount()
+android.support.v4.widget.NestedScrollView: void setOnScrollChangeListener(android.support.v4.widget.NestedScrollView$OnScrollChangeListener)
+android.support.v4.widget.NestedScrollView: void setFillViewport(boolean)
+android.support.v4.widget.NestedScrollView: void setSmoothScrollingEnabled(boolean)
+android.support.v4.widget.NestedScrollView: float getVerticalScrollFactorCompat()
+android.support.v4.widget.NestedScrollView: int getScrollRange()
+android.support.v4.widget.NestedScrollView$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SlidingPaneLayout: void setParallaxDistance(int)
+android.support.v4.widget.SlidingPaneLayout: int getParallaxDistance()
+android.support.v4.widget.SlidingPaneLayout: void setSliderFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getSliderFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setCoveredFadeColor(int)
+android.support.v4.widget.SlidingPaneLayout: int getCoveredFadeColor()
+android.support.v4.widget.SlidingPaneLayout: void setPanelSlideListener(android.support.v4.widget.SlidingPaneLayout$PanelSlideListener)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawable(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawableLeft(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowDrawableRight(android.graphics.drawable.Drawable)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResource(int)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResourceLeft(int)
+android.support.v4.widget.SlidingPaneLayout: void setShadowResourceRight(int)
+android.support.v4.widget.SlidingPaneLayout$SavedState: android.os.Parcelable$Creator CREATOR
+android.support.v4.widget.SwipeRefreshLayout: void setColorViewAlpha(int)
+android.support.v4.widget.SwipeRefreshLayout: void setSize(int)
+android.support.v4.widget.SwipeRefreshLayout: void setOnRefreshListener(android.support.v4.widget.SwipeRefreshLayout$OnRefreshListener)
+android.support.v4.widget.SwipeRefreshLayout: void setRefreshing(boolean)
+android.support.v4.widget.SwipeRefreshLayout: void setAnimationProgress(float)
+android.support.v4.widget.SwipeRefreshLayout: void setProgressBackgroundColor(int)
+android.support.v4.widget.SwipeRefreshLayout: void setProgressBackgroundColorSchemeResource(int)
+android.support.v4.widget.SwipeRefreshLayout: void setProgressBackgroundColorSchemeColor(int)
+android.support.v4.widget.SwipeRefreshLayout: void setColorScheme(int[])
+android.support.v4.widget.SwipeRefreshLayout: void setColorSchemeResources(int[])
+android.support.v4.widget.SwipeRefreshLayout: void setColorSchemeColors(int[])
+android.support.v4.widget.SwipeRefreshLayout: void setDistanceToTriggerSync(int)
+android.support.v4.widget.SwipeRefreshLayout: int getProgressCircleDiameter()
+android.support.v4.widget.SwipeRefreshLayout: int getNestedScrollAxes()
+android.support.v4.widget.SwipeRefreshLayout: void setNestedScrollingEnabled(boolean)
+com.android.smartShow.R$attr: int template_color
+com.android.smartShow.R$attr: int template_icon
+com.android.smartShow.R$attr: int template_text
+com.android.smartShow.R$attr: int template_text_size
+com.android.smartShow.R$color: int action_bar_background
+com.android.smartShow.R$color: int form_border_color
+com.android.smartShow.R$color: int gray
+com.android.smartShow.R$color: int main_activity_tab_bg
+com.android.smartShow.R$color: int main_color
+com.android.smartShow.R$color: int main_color_light
+com.android.smartShow.R$color: int text_color_high_dark
+com.android.smartShow.R$color: int text_color_low_dark
+com.android.smartShow.R$color: int white
+com.android.smartShow.R$dimen: int actionbar_button_divider
+com.android.smartShow.R$dimen: int actionbar_title_text_size
+com.android.smartShow.R$dimen: int activity_horizontal_margin
+com.android.smartShow.R$dimen: int activity_vertical_margin
+com.android.smartShow.R$dimen: int form_border_width
+com.android.smartShow.R$dimen: int form_row_height
+com.android.smartShow.R$dimen: int form_row_title_width
+com.android.smartShow.R$dimen: int login_button_corner_radius
+com.android.smartShow.R$dimen: int login_button_divider_length
+com.android.smartShow.R$dimen: int login_button_margin
+com.android.smartShow.R$dimen: int login_divider_length
+com.android.smartShow.R$dimen: int login_height
+com.android.smartShow.R$dimen: int login_logo_size
+com.android.smartShow.R$dimen: int login_margin_bottom
+com.android.smartShow.R$dimen: int login_margin_top
+com.android.smartShow.R$dimen: int login_soft_ware_info
+com.android.smartShow.R$dimen: int login_soft_ware_name
+com.android.smartShow.R$dimen: int login_soft_ware_ver
+com.android.smartShow.R$dimen: int login_with
+com.android.smartShow.R$dimen: int menu_height
+com.android.smartShow.R$dimen: int menu_img_size
+com.android.smartShow.R$dimen: int menu_length
+com.android.smartShow.R$dimen: int menu_parent_dec_size
+com.android.smartShow.R$dimen: int menu_right_sep
+com.android.smartShow.R$dimen: int menu_sep
+com.android.smartShow.R$dimen: int menu_sub_dec_size
+com.android.smartShow.R$dimen: int menu_width
+com.android.smartShow.R$dimen: int none
+com.android.smartShow.R$dimen: int padding_big
+com.android.smartShow.R$dimen: int padding_large
+com.android.smartShow.R$dimen: int padding_normal
+com.android.smartShow.R$dimen: int padding_small
+com.android.smartShow.R$dimen: int padding_tiny
+com.android.smartShow.R$dimen: int padding_xlarge
+com.android.smartShow.R$dimen: int sub_menu_height
+com.android.smartShow.R$dimen: int tab_title_text_size
+com.android.smartShow.R$dimen: int text_size_big
+com.android.smartShow.R$dimen: int text_size_large
+com.android.smartShow.R$dimen: int text_size_normal
+com.android.smartShow.R$dimen: int text_size_small
+com.android.smartShow.R$dimen: int text_size_tiny
+com.android.smartShow.R$dimen: int title_margin_bottom
+com.android.smartShow.R$dimen: int title_text_size
+com.android.smartShow.R$drawable: int ic_launcher
+com.android.smartShow.R$drawable: int ic_menu_allfriends
+com.android.smartShow.R$drawable: int ic_menu_emoticons
+com.android.smartShow.R$drawable: int ic_menu_friendslist
+com.android.smartShow.R$drawable: int ic_menu_start_conversation
+com.android.smartShow.R$drawable: int template_back
+com.android.smartShow.R$drawable: int template_menu
+com.android.smartShow.R$drawable: int template_menu_bg
+com.android.smartShow.R$drawable: int template_search
+com.android.smartShow.R$id: int back_button
+com.android.smartShow.R$id: int divider
+com.android.smartShow.R$id: int expand_list
+com.android.smartShow.R$id: int footer
+com.android.smartShow.R$id: int fragment_root
+com.android.smartShow.R$id: int menu_button
+com.android.smartShow.R$id: int menu_dec
+com.android.smartShow.R$id: int menu_icon
+com.android.smartShow.R$id: int search_button
+com.android.smartShow.R$id: int tab1
+com.android.smartShow.R$id: int tab2
+com.android.smartShow.R$id: int tab3
+com.android.smartShow.R$id: int tab4
+com.android.smartShow.R$id: int title
+com.android.smartShow.R$layout: int template_activity_action_bar
+com.android.smartShow.R$layout: int template_list_item
+com.android.smartShow.R$layout: int template_main_ativity
+com.android.smartShow.R$layout: int template_menu_list_view
+com.android.smartShow.R$layout: int template_sub_menu_list_item
+com.android.smartShow.R$string: int action_bar_title
+com.android.smartShow.R$string: int app_info
+com.android.smartShow.R$string: int app_name
+com.android.smartShow.R$string: int first_tab_title
+com.android.smartShow.R$string: int fouth_tab_title
+com.android.smartShow.R$string: int home_title
+com.android.smartShow.R$string: int login
+com.android.smartShow.R$string: int login_title
+com.android.smartShow.R$string: int password
+com.android.smartShow.R$string: int register
+com.android.smartShow.R$string: int second_tab_title
+com.android.smartShow.R$string: int third_tab_title
+com.android.smartShow.R$string: int username
+com.android.smartShow.R$style: int AppBaseTheme
+com.android.smartShow.R$style: int AppTheme
+com.android.smartShow.R$styleable: int[] template_changeColorIconView
+com.android.smartShow.R$styleable: int template_changeColorIconView_template_color
+com.android.smartShow.R$styleable: int template_changeColorIconView_template_icon
+com.android.smartShow.R$styleable: int template_changeColorIconView_template_text
+com.android.smartShow.R$styleable: int template_changeColorIconView_template_text_size
+com.android.smartShow.activity.LoginActivity
+com.android.smartShow.activity.LoginActivity: LoginActivity()
+com.android.smartShow.activity.LoginActivity: void onBackPress(android.view.View)
+com.android.smartShow.activity.LoginActivity: void onSearchPress(android.view.View)
+com.project.template.inf.MenuClickListener
+com.project.template.menu.BaseMenuAdapter
+com.project.template.menu.BaseMenuAdapter$Item
+com.project.template.menu.MenuItem
+com.project.template.menu.MyMenu
+com.project.template.menu.MyMenu$1
+com.project.template.menu.MyMenu$2
+com.project.template.templateActivity.BaseActivity
+com.project.template.templateActivity.BaseActivity: BaseActivity()
+com.project.template.templateActivity.BaseActivity: void onBackPress(android.view.View)
+com.project.template.templateActivity.BaseActivity: void onSearchPress(android.view.View)
+com.project.template.templateActivity.BaseActivity$1
+com.project.template.templateActivity.BaseActivity$1$1
+com.project.template.templateActivity.BaseActivity$1$2
+com.project.template.templateView.ChangeColorIconWithTextView
+com.project.template.templateView.ChangeColorIconWithTextView: ChangeColorIconWithTextView(android.content.Context)
+com.project.template.templateView.ChangeColorIconWithTextView: ChangeColorIconWithTextView(android.content.Context,android.util.AttributeSet)
+com.project.template.templateView.ChangeColorIconWithTextView: void setupTargetBitmap(int)
+com.project.template.templateView.ChangeColorIconWithTextView: void setIconAlpha(float)
+com.project.template.templateView.ChangeColorIconWithTextView: void setIconColor(int)
+com.project.template.templateView.ChangeColorIconWithTextView: void setIcon(int)
+com.project.template.templateView.ChangeColorIconWithTextView: void setIcon(android.graphics.Bitmap)
+com.project.template.utils.InvokeUtils
+com.project.template.utils.TemplateLog
