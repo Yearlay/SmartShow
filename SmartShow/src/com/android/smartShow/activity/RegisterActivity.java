@@ -3,7 +3,6 @@ package com.android.smartShow.activity;
 
 import java.util.Map;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
@@ -11,9 +10,8 @@ import android.widget.Button;
 
 import com.android.smartShow.R;
 
-public class LoginActivity extends BaseActivity{
+public class RegisterActivity extends BaseActivity{
     
-    private Button mLoginButton;
     private Button mRegisterButton;
 
     @Override
@@ -30,7 +28,7 @@ public class LoginActivity extends BaseActivity{
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.login_ativity);
+        setContentView(R.layout.register_ativity);
         super.onCreate(savedInstanceState);
     }
 
@@ -63,28 +61,19 @@ public class LoginActivity extends BaseActivity{
 
     @Override
     protected void initWidget() {
-        mLoginButton = (Button) findViewById(R.id.login_button);
         mRegisterButton = (Button) findViewById(R.id.register_button);
     }
 
     @Override
     protected void initListener() {
-        bindOnClickLister(this, mLoginButton, mRegisterButton);
+        bindOnClickLister(this, mRegisterButton);
     }
 
     @Override
     public void onClick(View view) {
-        Intent intent = null;
         switch (view.getId()) {
-            case R.id.login_button:
-                intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-                
             case R.id.register_button:
-                intent = new Intent(this, RegisterActivity.class);
-                startActivity(intent);
+                
                 break;
 
             default:

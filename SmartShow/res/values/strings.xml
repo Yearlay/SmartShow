@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">SmartShow</string>
+    
+    <string name="welcome_activity_name">Welcome</string>
+    <string name="Login_activity_name">Login</string>
+    <string name="Register_activity_name">Register</string>
+    <string name="Main_activity_name">Main</string>
+    
+    <string name="account_textview_message">用户名:</string>
+    <string name="password_textview_message">密码:</string>
+    <string name="password_verify_textview_message">确认密码:</string>
+    <string name="login_button_message">登录</string>
+    <string name="register_button_message">注册</string>
+    
+    <string name="remember_account_checkbox_message">记住账户</string>
+    <string name="forget_password_textview_message">忘记密码</string>
+    
+    <string name="company_name">数拓科技股份有限公司</string>
+    <string name="software_version">v 1.0.0</string>
+    
+    <string name="show_logo">Show logo</string>
 </resources>
