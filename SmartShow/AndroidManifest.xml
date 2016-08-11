@@ -16,6 +16,7 @@
         <activity
             android:name=".activity.WelcomeActivity"
             android:label="@string/welcome_activity_name"
+            android:theme="@style/notitle"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -26,12 +27,14 @@
         <activity
             android:name=".activity.LoginActivity"
             android:label="@string/Login_activity_name"
+            android:theme="@style/notitle"
             android:screenOrientation="portrait">
         </activity>
         
         <activity
             android:name=".activity.RegisterActivity"
             android:label="@string/Register_activity_name"
+            android:theme="@style/notitle"
             android:screenOrientation="portrait">
         </activity>
         

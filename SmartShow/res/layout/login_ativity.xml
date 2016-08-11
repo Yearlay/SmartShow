@@ -72,22 +72,6 @@
         android:layout_alignBottom="@+id/password_edittext"
         android:layout_toLeftOf="@+id/password_edittext"
         android:text="@string/password_textview_message" />
-
-    <CheckBox
-        android:id="@+id/remember_account_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/password_textview"
-        android:layout_centerVertical="true"
-        android:text="@string/remember_account_checkbox_message" />
-
-    <TextView
-        android:id="@+id/forget_password_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/password_edittext"
-        android:layout_centerVertical="true"
-        android:text="@string/forget_password_textview_message" />
     
     <TextView
         android:id="@+id/company_name"
@@ -106,5 +90,22 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
         android:text="@string/software_version" />
+
+    <CheckBox
+        android:id="@+id/remember_account_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/password_textview"
+        android:layout_below="@+id/password_edittext"
+        android:text="@string/remember_account_checkbox_message" />
+
+    <TextView
+        android:id="@+id/forget_password_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/remember_account_checkbox"
+        android:layout_alignBottom="@+id/remember_account_checkbox"
+        android:layout_alignRight="@+id/password_edittext"
+        android:text="@string/forget_password_textview_message" />
 
 </RelativeLayout>
