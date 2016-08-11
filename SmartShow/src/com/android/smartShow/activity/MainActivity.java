@@ -1,160 +1,42 @@
 package com.android.smartShow.activity;
 
+import java.util.ArrayList;
 import java.util.Map;
 
-import android.app.ActionBar;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
+import com.android.smartShow.R;
+import com.android.smartShow.actionbar.ActionBarManager;
+import com.android.smartShow.actionbar.MainActionBar;
+import com.android.smartShow.adapter.MainViewPagerAdapter;
+import com.android.smartShow.fragment.BaseFragment;
+import com.android.smartShow.fragment.MainPageFourFragment;
+import com.android.smartShow.fragment.MainPageOneFragment;
+import com.android.smartShow.fragment.MainPageThreeFragment;
+import com.android.smartShow.fragment.MainPageTwoFragment;
+
 import android.os.Bundle;
 import android.os.Message;
-import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MotionEvent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.view.ViewPager;
+import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
-import android.widget.TextView;
+import android.widget.RadioButton;
 
-import com.android.smartShow.R;
-import com.android.smartShow.inf.MenuClickListener;
-import com.android.smartShow.menu.MyMenu;
-import com.project.template.utils.InvokeUtils;
-
-public class MainActivity extends BaseActivity{
-
-    private Button mBackButton;
-    private Button mSearchButton;
-    private Button mMenuButton;
-    private TextView mTitleTextView;
-    private ActionBar mActionBar;
-    private MenuClickListener mMenuClickListener;
-    private MyMenu myMenu;
-    private PopupWindow mMenuPopup;
-    private boolean mMenuShowing = false;
-    private int ID_BACK;
-    private int ID_MENU;
-    private int ID_SEARCH;
-    private int DRAWABLE_MENU;
+public class MainActivity extends BaseActivity {
     
-    private OnClickListener listener = new OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            if (view.getId() == ID_BACK) {
-                onBackPress(view);
-            }
-            if (view.getId() == ID_SEARCH) {
-                onSearchPress(view);
-            }
-            if (view.getId() == ID_MENU) {
-                if (onMenuPress(view)) {
-                    Rect actionBarRec = new Rect();
-                    mActionBar.getCustomView().getGlobalVisibleRect(actionBarRec);
-                    Rect menuIconRec = new Rect();
-                    view.getGlobalVisibleRect(menuIconRec);
-                    LinearLayout v = myMenu.createMenu(getApplicationContext(), mMenuClickListener);
-                    if (mMenuPopup == null) {
-                        mMenuPopup = new PopupWindow(v, 200, ViewGroup.LayoutParams.WRAP_CONTENT, true);
-                        Drawable bg = getResources().getDrawable(DRAWABLE_MENU);
-                        mMenuPopup.setBackgroundDrawable(bg);
-                        mMenuPopup.setOutsideTouchable(true);
-                        mMenuPopup.setTouchInterceptor(new View.OnTouchListener() {
-                            @Override
-                            public boolean onTouch(View v, MotionEvent event) {
-                                if (mMenuShowing) {
-                                    mMenuPopup.dismiss();
-                                }
-                                return false;
-                            }
-                        });
-                        mMenuPopup.setOnDismissListener(new PopupWindow.OnDismissListener() {
-                            @Override
-                            public void onDismiss() {
-                                mMenuShowing = false;
-                            }
-                        });
-                    }
-                    if (mMenuShowing) {
-                        mMenuPopup.dismiss();
-                    } else {
-                        mMenuPopup.setFocusable(true);
-                        mMenuPopup.showAsDropDown(view, 0, actionBarRec.bottom - menuIconRec.bottom);
-                        mMenuShowing = true;
-                    }
-
-                }
-            }
-        }
-
-    };
+    MainViewPagerAdapter mMainViewPagerAdapter;
     
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // 设置返回图标
-        if (mBackButton != null) {
-            mMenuButton.setClickable(backEnable());
-            if (backEnable()) {
-                mBackButton.setBackgroundDrawable(setBackRes() == null ? getResources().getDrawable(InvokeUtils.create(getApplicationContext()).getIdByName("drawable", "template_back")) : setBackRes());
-                mBackButton.setOnClickListener(listener);
-                mBackButton.setVisibility(View.VISIBLE);
-            } else {
-                mBackButton.setVisibility(View.INVISIBLE);
-            }
-        }
-        // 设置搜索图标
-        if (mSearchButton != null) {
-            mSearchButton.setClickable(searchEnable());
-            if (searchEnable()) {
-                mSearchButton.setBackgroundDrawable(setSearchRes() == null ? getResources().getDrawable(InvokeUtils.create(getApplicationContext()).getIdByName("drawable", "template_search")) : setSearchRes());
-                mSearchButton.setOnClickListener(listener);
-                mSearchButton.setVisibility(View.VISIBLE);
-            } else {
-                mSearchButton.setVisibility(View.INVISIBLE);
-            }
-        }
-        // 设置更多图标
-        if (mMenuButton != null) {
-            mMenuButton.setClickable(menuEnable());
-            if (menuEnable()) {
-                mMenuButton.setBackgroundDrawable(setMenuRes() == null ? getResources().getDrawable(InvokeUtils.create(getApplicationContext()).getIdByName("drawable", "template_menu")) : setMenuRes());
-                mMenuButton.setVisibility(View.VISIBLE);
-                mMenuButton.setOnClickListener(listener);
-            } else {
-                mMenuButton.setVisibility(View.INVISIBLE);
-            }
-        }
-        // 设置标题
-        if (mTitleTextView != null) {
-            mTitleTextView.setText(TextUtils.isEmpty(setTitleTextView()) ? getString(InvokeUtils.create(getApplicationContext()).getIdByName("string", "action_bar_title")) : setTitleTextView());
-        }
-        onCreateMyOptionMenu(myMenu, mMenuClickListener);
-        return true;
-    }
+    ViewPager mViewPager;
+    BaseFragment mPageOneFragment;
+    BaseFragment mPageTwoFragment;
+    BaseFragment mPageThreeFragment;
+    BaseFragment mPageFourFragment;
     
-    @Override
-    public void onBackPress(View arg0) {
-    }
+    RadioButton mOneRadioButton;
+    RadioButton mTwoRadioButton;
+    RadioButton mThreeRadioButton;
+    RadioButton mFourRadioButton;
 
-    @Override
-    public boolean onMenuPress(View arg0) {
-        return false;
-    }
-
-    @Override
-    public void onSearchPress(View arg0) {
-    }
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.template_main_ativity);
-    }
-
-    @Override
-    public void onClick(View arg0) {
-    }
-
+    /* -------------------------------------------------------------------- */
     @Override
     public void onResult(int event, boolean isok, Map<String, Object> result) {
     }
@@ -179,40 +61,172 @@ public class MainActivity extends BaseActivity{
     }
 
     @Override
-    protected void initData(Bundle savedInstanceState) {
+    public void onBackPress(View view) {
     }
 
     @Override
-    protected void initWidget() {
-        DRAWABLE_MENU = InvokeUtils.create(getApplicationContext()).getIdByName("drawable", "template_menu_bg");
-        ID_BACK = InvokeUtils.create(getApplicationContext()).getIdByName("id", "back_button");
-        ID_SEARCH = InvokeUtils.create(getApplicationContext()).getIdByName("id", "search_button");
-        ID_MENU = InvokeUtils.create(getApplicationContext()).getIdByName("id", "menu_button");
-        mActionBar = getActionBar();
-        mActionBar.setDisplayShowHomeEnabled(false);
-        mActionBar.setDisplayShowTitleEnabled(false);
-        mActionBar.setDisplayShowCustomEnabled(true);
-        mActionBar.setCustomView(InvokeUtils.create(getApplicationContext()).getIdByName("layout", "template_activity_action_bar"));
-        mBackButton = (Button) mActionBar.getCustomView().findViewById(ID_BACK);
-        mSearchButton = (Button) mActionBar.getCustomView().findViewById(ID_SEARCH);
-        mMenuButton = (Button) mActionBar.getCustomView().findViewById(ID_MENU);
-        mTitleTextView = (TextView) mActionBar.getCustomView().findViewById(InvokeUtils.create(getApplicationContext()).getIdByName("id", "title"));
-        myMenu = new MyMenu(this);
+    public void onSearchPress(View view) {
+    }
+
+    @Override
+    public boolean onMenuPress(View view) {
+        return false;
+    }
+
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+     // new fragment object.
+        mPageOneFragment = new MainPageOneFragment();
+        mPageTwoFragment = new MainPageTwoFragment();
+        mPageThreeFragment = new MainPageThreeFragment();
+        mPageFourFragment = new MainPageFourFragment();
+
+        // add fragment list
+        ArrayList<BaseFragment> fragmentList = new ArrayList<BaseFragment>();
+        fragmentList.add(mPageOneFragment);
+        fragmentList.add(mPageTwoFragment);
+        fragmentList.add(mPageThreeFragment);
+        fragmentList.add(mPageFourFragment);
+
+        // add fragment name
+        ArrayList<String> tabNameList = new ArrayList<String>();
+        tabNameList.add(mPageOneFragment.getClass().getSimpleName());
+        tabNameList.add(mPageTwoFragment.getClass().getSimpleName());
+        tabNameList.add(mPageThreeFragment.getClass().getSimpleName());
+        tabNameList.add(mPageFourFragment.getClass().getSimpleName());
+
+        // init fragment adapter
+        FragmentManager fm = this.getSupportFragmentManager();
+        mMainViewPagerAdapter = new MainViewPagerAdapter(this, fm, fragmentList, tabNameList, null);
     }
     
-    public int getActionBarHeight() {
-        return mActionBar.getHeight();
+    @Override
+    protected void initActionBar() {
+        super.initActionBar();
+        ActionBarManager.instance().getActionBar(ActionBarManager.MAIN_ACTION_BAR, this)
+                .udpateActionBar(MainActionBar.MAIN_PAGE_ONE);
+    }
+
+
+    @Override
+    protected void initWidget() {
+        setContentView(R.layout.main_hotseat);
+        
+        setTitle(R.string.main_page_hotseat_one_message);
+        
+        mOneRadioButton = (RadioButton) findViewById(R.id.main_page_one);
+        mTwoRadioButton = (RadioButton) findViewById(R.id.main_page_two);
+        mThreeRadioButton = (RadioButton) findViewById(R.id.main_page_three);
+        mFourRadioButton = (RadioButton) findViewById(R.id.main_page_four);
+        
+        mViewPager = (ViewPager) findViewById(R.id.view_pager);
+        mViewPager.setAdapter(mMainViewPagerAdapter);
+        mViewPager.setOffscreenPageLimit(4);
+
+        mOneRadioButton.setChecked(true);
     }
 
     @Override
     protected void refreshView() {
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void initListener() {
+        bindOnClickLister(this, mOneRadioButton, mTwoRadioButton, mThreeRadioButton,
+                mFourRadioButton);
+        
+        // 设置viewpager和上方标题的关联关系
+        mViewPager.setOnPageChangeListener(new OnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                mMainViewPagerAdapter.getItem(position);
+                switch (position) {
+                    case 0:
+                        changeToMainPageOne();
+                        break;
+                    case 1:
+                        changeToMainPageTwo();
+                        break;
+                    case 2:
+                        changToMainPageThree();
+                        break;
+                    case 3:
+                        changeToMainPageFour();
+                        break;
+                }
+            }
+    
+            @Override
+            public void onPageScrollStateChanged(int arg0) {
+                // TODO Auto-generated method stub
+    
+            }
+    
+            @Override
+            public void onPageScrolled(int arg0, float arg1, int arg2) {
+                // TODO Auto-generated method stub
+    
+            }
+        });
+    }
+    
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.main_page_one:
+                changeToMainPageOne();
+                mViewPager.setCurrentItem(0);
+                break;
+            case R.id.main_page_two:
+                changeToMainPageTwo();
+                mViewPager.setCurrentItem(1);
+                break;
+            case R.id.main_page_three:
+                changToMainPageThree();
+                mViewPager.setCurrentItem(2);
+                break;
+            case R.id.main_page_four:
+                changeToMainPageFour();
+                mViewPager.setCurrentItem(3);
+                break;
+
+            default:
+                break;
+        }
     }
 
     @Override
     protected void clearData() {
+    }
+    /* -------------------------------------------------------------------- */
+    
+    private void changeToMainPageOne() {
+        mOneRadioButton.setChecked(true);
+        setTitle(R.string.main_page_hotseat_one_message);
+        ActionBarManager.instance().getActionBar(ActionBarManager.MAIN_ACTION_BAR, this)
+                .udpateActionBar(MainActionBar.MAIN_PAGE_ONE);
+    }
+
+    private void changeToMainPageTwo() {
+        mTwoRadioButton.setChecked(true);
+        setTitle(R.string.main_page_hotseat_two_message);
+        ActionBarManager.instance().getActionBar(ActionBarManager.MAIN_ACTION_BAR, this)
+                .udpateActionBar(MainActionBar.MAIN_PAGE_TWO);
+    }
+
+    private void changToMainPageThree() {
+        mThreeRadioButton.setChecked(true);
+        setTitle(R.string.main_page_hotseat_three_message);
+        ActionBarManager.instance().getActionBar(ActionBarManager.MAIN_ACTION_BAR, this)
+                .udpateActionBar(MainActionBar.MAIN_PAGE_THREE);
+    }
+
+    private void changeToMainPageFour() {
+        mFourRadioButton.setChecked(true);
+        setTitle(R.string.main_page_hotseat_four_message);
+        ActionBarManager.instance().getActionBar(ActionBarManager.MAIN_ACTION_BAR, this)
+                .udpateActionBar(MainActionBar.MAIN_PAGE_FOUR);
     }
 }

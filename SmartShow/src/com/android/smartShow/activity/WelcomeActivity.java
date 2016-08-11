@@ -51,11 +51,11 @@ public class WelcomeActivity extends BaseActivity {
             break;
 
         case Constant.Start.MAIN:
-            intent = new Intent(WelcomeActivity.this, MainActivity.class);
+            intent = new Intent(WelcomeActivity.this, FirstActivity.class);
             break;
 
         default:
-            intent = new Intent(WelcomeActivity.this, MainActivity.class);
+            intent = new Intent(WelcomeActivity.this, FirstActivity.class);
         }
 
         startActivity(intent);

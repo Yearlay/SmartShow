@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <!--
+         <include
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        layout="@layout/title_bar" />
+    -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <RadioGroup
+        android:id="@+id/main_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_radio_group_height"
+        android:layout_gravity="bottom"
+        android:background="@color/fragment_title_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/main_page_one"
+            style="@style/onepiece_tab_style"
+            android:layout_marginTop="@dimen/personal_view_hor_space_size"
+            android:drawableTop="@drawable/main_page_one"
+            android:text="@string/main_page_hotseat_one_message" />
+
+        <RadioButton
+            android:id="@+id/main_page_two"
+            style="@style/onepiece_tab_style"
+            android:layout_marginTop="@dimen/personal_view_hor_space_size"
+            android:drawableTop="@drawable/main_page_two"
+            android:text="@string/main_page_hotseat_two_message" />
+
+        <RadioButton
+            android:id="@+id/main_page_three"
+            style="@style/onepiece_tab_style"
+            android:layout_marginTop="@dimen/personal_view_hor_space_size"
+            android:drawableTop="@drawable/main_page_three"
+            android:text="@string/main_page_hotseat_three_message" />
+
+        <RadioButton
+            android:id="@+id/main_page_four"
+            style="@style/onepiece_tab_style"
+            android:layout_marginTop="@dimen/personal_view_hor_space_size"
+            android:drawableTop="@drawable/main_page_four"
+            android:text="@string/main_page_hotseat_four_message" />
+    </RadioGroup>
+
+</LinearLayout>

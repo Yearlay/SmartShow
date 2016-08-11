@@ -1,6 +1,9 @@
 package com.android.smartShow.activity;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -8,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
 
+import com.android.smartShow.R;
 import com.android.smartShow.inf.MenuClickListener;
 import com.android.smartShow.menu.MyMenu;
 import com.project.template.logic.callback.RequestCallback;
@@ -20,6 +24,8 @@ public abstract class BaseActivity extends FragmentActivity
     
     
     protected Intent mLastIntent;
+    
+    protected ActionBar mActionBar;
     
     enum ActivityStatus {
         ACTIVITY_RESUME,
@@ -77,6 +83,36 @@ public abstract class BaseActivity extends FragmentActivity
         initData(savedInstanceState);
         initWidget();
         initListener();
+        initActionBar();
+    }
+    
+    protected void initActionBar() {
+        mActionBar = getActionBar();
+        if (null != mActionBar) {
+            mActionBar.setHomeButtonEnabled(true);
+            mActionBar.setDisplayShowTitleEnabled(true);
+            mActionBar.setLogo(R.drawable.logo);
+            Drawable d = new Drawable() {
+                @Override
+                public void setColorFilter(ColorFilter cf) {
+                }
+                
+                @Override
+                public void setAlpha(int alpha) {
+                }
+                
+                @Override
+                public int getOpacity() {
+                    return 0;
+                }
+                
+                @Override
+                public void draw(Canvas canvas) {
+                    canvas.drawColor(getResources().getColor(R.color.fragment_title_background));
+                }
+            };
+            mActionBar.setBackgroundDrawable(d);
+        }
     }
     
     @Override

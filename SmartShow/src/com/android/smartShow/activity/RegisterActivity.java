@@ -73,7 +73,7 @@ public class RegisterActivity extends BaseActivity{
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.register_button:
-                
+                this.onBackPressed();
                 break;
 
             default:

@@ -19,4 +19,9 @@
     <string name="software_version">v 1.0.0</string>
     
     <string name="show_logo">Show logo</string>
+    
+    <string name="main_page_hotseat_one_message">屏幕管理</string>
+    <string name="main_page_hotseat_two_message">示例模板</string>
+    <string name="main_page_hotseat_three_message">个人信息</string>
+    <string name="main_page_hotseat_four_message">软件设置</string>
 </resources>
