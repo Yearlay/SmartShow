@@ -24,4 +24,11 @@
     <string name="main_page_hotseat_two_message">示例模板</string>
     <string name="main_page_hotseat_three_message">个人信息</string>
     <string name="main_page_hotseat_four_message">软件设置</string>
+    
+    <string name="store_name">门店名字</string>
+    <string-array name="store_list">
+        <item>门店一</item>
+        <item>门店二</item>
+        <item>门店三</item>
+    </string-array>
 </resources>

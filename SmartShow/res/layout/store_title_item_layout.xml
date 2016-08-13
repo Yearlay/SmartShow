@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/store_bottom_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/store_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/store_name"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:background="@drawable/store_name_title_bottom_line" />
+
+    <ImageView
+        android:id="@+id/store_right_line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/store_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/store_name"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/store_name_title_right_line" />
+
+    <TextView
+        android:id="@+id/store_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="4dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="4dp"
+        android:text="@string/store_name" />
+
+</RelativeLayout>
