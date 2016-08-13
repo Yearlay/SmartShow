@@ -6,6 +6,7 @@ import com.android.smartShow.fragment.MainPageOneFragment;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -44,16 +45,11 @@ public class StoreTitleView extends RelativeLayout implements View.OnClickListen
 
     public void setSelected(boolean selected) {
         this.mSelected = selected;
-        mBottomline.setVisibility(selected ? View.INVISIBLE : View.VISIBLE);
+        mBottomline.setVisibility(selected ? View.VISIBLE : View.INVISIBLE);
     }
 
     public StoreTitleView(Context context) {
         super(context);
-        mContext = context;
-    }
-
-    public StoreTitleView(Context context, AttributeSet attrs) {
-        super(context, attrs);
         mContext = context;
         LayoutInflater inflater = (LayoutInflater) mContext
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -61,9 +57,14 @@ public class StoreTitleView extends RelativeLayout implements View.OnClickListen
                 true);
         mStoreTitle = (TextView) findViewById(R.id.store_name);
         mStoreTitle.setOnClickListener(this);
-        mBottomline = (ImageView) findViewById(R.id.store_right_line);
+        mBottomline = (ImageView) findViewById(R.id.store_bottom_line);
         
         setSelected(false);
+    }
+
+    public StoreTitleView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        mContext = context;
     }
 
     @Override
@@ -79,6 +80,12 @@ public class StoreTitleView extends RelativeLayout implements View.OnClickListen
             default:
                 break;
         }
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) { 
+        getParent().requestDisallowInterceptTouchEvent(false);
+        return super.dispatchTouchEvent(ev);  
     }
 
 }

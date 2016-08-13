@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 import com.android.smartShow.R;
+import com.android.smartShow.adapter.ScreenAdapter;
 import com.android.smartShow.view.StoreTitleView;
 
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 
 /**
@@ -24,6 +26,7 @@ public class MainPageOneFragment extends BaseFragment
     
     private ArrayList<StoreTitleView> mStoreItemList;
     private StoreTitleView mCurrentStoreTitleView;
+    private GridView mScreenGridView;
 
     public ArrayList<StoreTitleView> getStoreItemList() {
         return mStoreItemList;
@@ -95,6 +98,10 @@ public class MainPageOneFragment extends BaseFragment
         if (mStoreItemList.size() > 0) {
             setCurrentStoreTitleView(mStoreItemList.get(0));
         }
+        
+        mScreenGridView = (GridView) view.findViewById(R.id.screen_gridview);
+        mScreenGridView.setAdapter(new ScreenAdapter(getContext()));
+        
         return view;
     }
 
