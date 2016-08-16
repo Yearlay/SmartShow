@@ -11,12 +11,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 /**
  * 个人
  */
 public class MainPageFourFragment extends BaseFragment 
             implements OnClickListener{
+    
+    private ListView mSettingsListView = null;
 
     @Override
     public boolean handleNotifyMessage(Message msg) {
@@ -50,13 +54,20 @@ public class MainPageFourFragment extends BaseFragment
 
     @Override
     protected void initData(Bundle bundle) {
-        // TODO Auto-generated method stub
-
     }
 
     @Override
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
-        View view = inflater.inflate(R.layout.main_page_three, container, false);
+        View view = inflater.inflate(R.layout.main_page_four, container, false);
+        
+        mSettingsListView = (ListView) view.findViewById(R.id.setting_list);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getContext(),
+                R.layout.settings_item, R.id.item_textview);
+        String[] settingListStr = getResources().getStringArray(R.array.settings_list);
+        for (String itemStr : settingListStr) {
+            arrayAdapter.add(itemStr);
+        }
+        mSettingsListView.setAdapter(arrayAdapter);
         return view;
     }
 

@@ -35,4 +35,14 @@
         <item>门店六</item>
         <item>添加门店</item>
     </string-array>
+    
+    <string-array name="settings_list">
+        <item>账户管理</item>
+        <item>消息设置</item>
+        <item>推荐好友</item>
+        <item>建议反馈</item>
+        <item>免责申明</item>
+        <item>当前版本 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t V1.0.0</item>
+        <item>关于我们</item>
+    </string-array>
 </resources>
