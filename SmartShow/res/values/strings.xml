@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SmartShow</string>
+    <string name="app_name">数拓软件</string>
     
     <string name="welcome_activity_name">Welcome</string>
     <string name="Login_activity_name">Login</string>
