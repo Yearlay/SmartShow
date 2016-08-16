@@ -44,5 +44,35 @@
         <item>免责申明</item>
         <item>当前版本 \t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t V1.0.0</item>
         <item>关于我们</item>
+
+    </string-array>
+    <string-array name="model_menu">
+        <item>行业种类</item>
+        <item>主调颜色</item>
+        <item>横屏竖屏</item>
+    </string-array>
+
+    <!-- 测试数据 -->
+    <string-array name="model_test">
+        <item>http://img1.mm131.com/pic/2330/1.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/2.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/3.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/4.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/5.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/6.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/7.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/8.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/9.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/10.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/11.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/12.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/13.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/14.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/15.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/16.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/17.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/18.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/19.jpg</item>
+        <item>http://img1.mm131.com/pic/2330/20.jpg</item>
     </string-array>
 </resources>

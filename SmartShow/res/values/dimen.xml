@@ -65,4 +65,14 @@
     <dimen name="treatment_recode_title_size">20sp</dimen>
     <dimen name="radio_button_conner_radius">5dp</dimen>
     <dimen name="radio_button_stroke_border">1dp</dimen>
+
+    <!-- 实例模板界面 -->
+    <dimen name="model_menu_text_size">18sp</dimen>
+    <dimen name="model_menu_image_width">130dp</dimen>
+    <dimen name="model_menu_image_height">90dp</dimen>
+    <dimen name="list_padding">10dp</dimen>
+    <dimen name="list_title_padding">15dp</dimen>
+    <dimen name="list_title">17sp</dimen>
+    <dimen name="list_author">14sp</dimen>
+
 </resources>

@@ -1,26 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:fashShow="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/logo_imageview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="85dp"
-        android:src="@drawable/logo" />
+    <LinearLayout
+        android:id="@+id/seprate"
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:orientation="horizontal"
+        android:weightSum="3" >
 
-    <TextView
-        android:id="@+id/textView1"
+        <Button
+            android:id="@+id/model_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:textSize="@dimen/model_menu_text_size" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/text_color_low_dark" />
+
+        <Button
+            android:id="@+id/model_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:textSize="@dimen/model_menu_text_size" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/text_color_low_dark" />
+
+        <Button
+            android:id="@+id/model_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:textSize="@dimen/model_menu_text_size" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/sep_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/seprate"
+        android:background="@color/text_color_low_dark" />
+
+    <ListView
+        android:id="@+id/model_list"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/logo_imageview"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="57dp"
-        android:text="Page Two" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sep_line"
+        android:divider="@color/text_color_low_dark"
+        android:layout_alignParentBottom="true"
+        android:dividerHeight="1dp" >
+    </ListView>
 
 </RelativeLayout>

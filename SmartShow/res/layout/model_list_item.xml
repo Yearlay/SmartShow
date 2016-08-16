@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+    <ImageView
+        android:id="@+id/list_image"
+        android:layout_width="@dimen/model_menu_image_width"
+        android:layout_height="@dimen/model_menu_image_height"
+        android:scaleType="fitXY"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/list_padding"
+        android:layout_marginLeft="@dimen/list_title"
+        android:layout_marginTop="@dimen/list_title_padding"
+        android:layout_toRightOf="@+id/list_image"
+        android:orientation="vertical"
+        android:weightSum="4" >
+
+        <TextView
+            android:id="@+id/list_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="这是妹子"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_color_high_dark"
+            android:textSize="@dimen/list_title" />
+
+        <TextView
+            android:id="@+id/list_hot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="热度:19881"
+            android:gravity="center_vertical"
+            android:textColor="@color/text_color_low_dark"
+            android:textSize="@dimen/list_author" />
+    </LinearLayout>
+
+</RelativeLayout>
