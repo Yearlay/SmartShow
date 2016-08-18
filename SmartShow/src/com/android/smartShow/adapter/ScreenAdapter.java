@@ -13,16 +13,28 @@ import android.widget.ImageView;
 
 public class ScreenAdapter extends BaseAdapter {
     
-    private ArrayList<Integer> mList = new ArrayList<Integer>();
+    private ArrayList<ScreenItem> mList = new ArrayList<ScreenItem>();
     private Context mContext;
     private LayoutInflater inflater = null;
+    
+    public class ScreenItem {
+        int imageId;
+        String screenName;
+
+        public ScreenItem(int imageId, String screenName) {
+            super();
+            this.imageId = imageId;
+            this.screenName = screenName;
+        }
+    }
 
     public ScreenAdapter(Context context) {
         super();
         inflater = LayoutInflater.from(context);
         
-        for (int i=0; i<11; i++) {
-            mList.add(new Integer(R.drawable.default_screen));
+        String[] screenNameList = context.getResources().getStringArray(R.array.screen_list);
+        for (String screenName : screenNameList) {
+            mList.add(new ScreenItem(R.drawable.default_screen, screenName));
         }
     }
 
@@ -47,7 +59,7 @@ public class ScreenAdapter extends BaseAdapter {
         if (inflater != null) {
             view = inflater.inflate(R.layout.screen_item_layout, null);
             ImageView imageView = (ImageView) view.findViewById(R.id.screen_imageview);
-            imageView.setImageResource(mList.get(position));
+            imageView.setImageResource(mList.get(position).imageId);
         }
         return view;
     }

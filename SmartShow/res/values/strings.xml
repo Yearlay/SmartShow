@@ -36,6 +36,12 @@
         <item>添加门店</item>
     </string-array>
     
+    <string-array name="screen_list">
+        <item>大厅屏组</item>
+        <item>迎宾屏</item>
+        <item>过道屏</item>
+    </string-array>
+    
     <string-array name="settings_list">
         <item>账户管理</item>
         <item>消息设置</item>
