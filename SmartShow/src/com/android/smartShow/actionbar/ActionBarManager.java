@@ -4,6 +4,7 @@ import com.android.smartShow.activity.BaseActivity;
 
 public class ActionBarManager {
     public static final int MAIN_ACTION_BAR = 1;
+    public static final int DEVICE_ACTION_BAR = 2;
     
     BaseActionBar mActionBar;
     
@@ -19,6 +20,10 @@ public class ActionBarManager {
         switch (acitonBarId) {
             case ActionBarManager.MAIN_ACTION_BAR:
                 mActionBar = new MainActionBar(activity);
+                break;
+                
+            case ActionBarManager.DEVICE_ACTION_BAR:
+                mActionBar = new DeviceListActionBar(activity);
                 break;
 
             default:

@@ -2,8 +2,11 @@ package com.android.smartShow.actionbar;
 
 import com.android.smartShow.R;
 import com.android.smartShow.activity.BaseActivity;
+import com.android.smartShow.activity.DeviceListActivity;
+import com.android.smartShow.activity.MainActivity;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -73,7 +76,8 @@ public class MainActionBar extends BaseActionBar {
     private void onClickFromPageOne(View view) {
         switch (view.getId()) {
             case R.id.actionbar_image_right:
-                
+                Intent intent = new Intent(mActivity, DeviceListActivity.class);
+                mActivity.startActivity(intent);
                 break;
 
             default:

@@ -5,6 +5,7 @@
     <string name="Login_activity_name">Login</string>
     <string name="Register_activity_name">Register</string>
     <string name="Main_activity_name">Main</string>
+    <string name="devicelist_activity_name">屏幕列表</string>
     
     <string name="account_textview_message">用户名:</string>
     <string name="password_textview_message">密码:</string>
@@ -48,6 +49,20 @@
         <item>9大厅屏组</item>
         <item>1迎宾屏</item>
         <item>1过道屏</item>
+    </string-array>
+    
+    <string-array name="device_list">
+        <item>大厅屏组_part1</item>
+        <item>大厅屏组_part2</item>
+        <item>大厅屏组_part3</item>
+        <item>大厅屏组_part4</item>
+        <item>大厅屏组_part5</item>
+        <item>大厅屏组_part6</item>
+        <item>大厅屏组_part7</item>
+        <item>大厅屏组_part8</item>
+        <item>大厅屏组_part9</item>
+        <item>迎宾屏</item>
+        <item>过道屏</item>
     </string-array>
     
     <string-array name="settings_list">
