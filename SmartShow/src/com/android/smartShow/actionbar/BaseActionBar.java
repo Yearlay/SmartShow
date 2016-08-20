@@ -3,11 +3,13 @@ package com.android.smartShow.actionbar;
 import com.android.smartShow.activity.BaseActivity;
 
 import android.app.ActionBar;
+import android.view.View.OnClickListener;
 
-public abstract class BaseActionBar {
+public abstract class BaseActionBar implements OnClickListener {
     
     public BaseActivity mActivity;
     public ActionBar mActionBar;
+    public int mStateValue;
     
     public BaseActionBar(BaseActivity activity) {
         super();
@@ -15,5 +17,7 @@ public abstract class BaseActionBar {
         mActionBar = mActivity.getActionBar();
     }
 
-    public abstract void udpateActionBar(int stateValue);
+    public void udpateActionBar(int stateValue) {
+        mStateValue = stateValue;
+    }
 }
