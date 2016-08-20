@@ -37,9 +37,17 @@
     </string-array>
     
     <string-array name="screen_list">
-        <item>大厅屏组</item>
-        <item>迎宾屏</item>
-        <item>过道屏</item>
+        <item>1大厅屏组</item>
+        <item>2大厅屏组</item>
+        <item>3大厅屏组</item>
+        <item>4大厅屏组</item>
+        <item>5大厅屏组</item>
+        <item>6大厅屏组</item>
+        <item>7大厅屏组</item>
+        <item>8大厅屏组</item>
+        <item>9大厅屏组</item>
+        <item>1迎宾屏</item>
+        <item>1过道屏</item>
     </string-array>
     
     <string-array name="settings_list">

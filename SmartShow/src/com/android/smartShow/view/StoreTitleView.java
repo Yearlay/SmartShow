@@ -55,9 +55,9 @@ public class StoreTitleView extends RelativeLayout implements View.OnClickListen
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View parentView = inflater.inflate(R.layout.store_title_item_layout, this,
                 true);
-        mStoreTitle = (TextView) findViewById(R.id.store_name);
+        mStoreTitle = (TextView) parentView.findViewById(R.id.store_name);
         mStoreTitle.setOnClickListener(this);
-        mBottomline = (ImageView) findViewById(R.id.store_bottom_line);
+        mBottomline = (ImageView) parentView.findViewById(R.id.store_bottom_line);
         
         setSelected(false);
     }

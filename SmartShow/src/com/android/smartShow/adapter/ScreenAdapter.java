@@ -3,6 +3,7 @@ package com.android.smartShow.adapter;
 import java.util.ArrayList;
 
 import com.android.smartShow.R;
+import com.android.smartShow.view.ScreenItemView;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class ScreenAdapter extends BaseAdapter {
     
@@ -17,13 +19,17 @@ public class ScreenAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater inflater = null;
     
+    private static int[] sImageCount = {
+        1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 1
+    };
+    
     public class ScreenItem {
-        int imageId;
+        int iamgeCount;
         String screenName;
 
-        public ScreenItem(int imageId, String screenName) {
+        public ScreenItem(int imageCount, String screenName) {
             super();
-            this.imageId = imageId;
+            this.iamgeCount = imageCount;
             this.screenName = screenName;
         }
     }
@@ -33,8 +39,8 @@ public class ScreenAdapter extends BaseAdapter {
         inflater = LayoutInflater.from(context);
         
         String[] screenNameList = context.getResources().getStringArray(R.array.screen_list);
-        for (String screenName : screenNameList) {
-            mList.add(new ScreenItem(R.drawable.default_screen, screenName));
+        for (int index = 0; index < screenNameList.length && index < sImageCount.length; index++) {
+            mList.add(new ScreenItem(sImageCount[index], screenNameList[index]));
         }
     }
 
@@ -58,8 +64,10 @@ public class ScreenAdapter extends BaseAdapter {
         View view = null;
         if (inflater != null) {
             view = inflater.inflate(R.layout.screen_item_layout, null);
-            ImageView imageView = (ImageView) view.findViewById(R.id.screen_imageview);
-            imageView.setImageResource(mList.get(position).imageId);
+            ScreenItemView screenItemView = (ScreenItemView) view.findViewById(R.id.screen_imageview);
+            screenItemView.setScreens(mList.get(position).iamgeCount);
+            TextView textView = (TextView) view.findViewById(R.id.screen_name);
+            textView.setText(mList.get(position).screenName);
         }
         return view;
     }
