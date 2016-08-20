@@ -59,5 +59,13 @@
         <item name="android:textColor">@drawable/onepiece_tab_text_color</item>
         <item name="android:textSize">12sp</item>
     </style>
+    
+    <!-- Defines the custom XML attributes supported for a HorizontalListView -->
+    <declare-styleable name="HorizontalListView">
+        <attr name="dividerWidth" format="dimension" />
+        <attr name="android:divider" />
+        <attr name="android:requiresFadingEdge" />
+        <attr name="android:fadingEdgeLength" />
+    </declare-styleable>
 
 </resources>

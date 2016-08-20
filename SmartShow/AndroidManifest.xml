@@ -51,6 +51,12 @@
         </activity>
         
         <activity
+            android:name=".activity.DeviceInfoActivity"
+            android:label="@string/deviceinfo_activity_name"
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
             android:name=".activity.MainActivity"
             android:label="@string/Main_activity_name"
             android:screenOrientation="portrait">

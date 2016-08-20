@@ -7,6 +7,7 @@
     <string name="Main_activity_name">Main</string>
     <string name="devicelist_activity_name">屏幕列表</string>
     <string name="deviceadd_activity_name">添加屏幕</string>
+    <string name="deviceinfo_activity_name">屏幕信息</string>
     
     <string name="account_textview_message">用户名:</string>
     <string name="password_textview_message">密码:</string>

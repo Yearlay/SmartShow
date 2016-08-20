@@ -3,24 +3,24 @@ package com.android.smartShow.activity;
 
 import java.util.Map;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.GridView;
-import android.widget.AdapterView.OnItemClickListener;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.Gallery;
+import android.widget.ListView;
 
 import com.android.smartShow.R;
 import com.android.smartShow.actionbar.ActionBarManager;
 import com.android.smartShow.actionbar.DeviceActionBar;
-import com.android.smartShow.actionbar.MainActionBar;
 import com.android.smartShow.adapter.DeviceAdapter;
+import com.android.smartShow.adapter.ModelAdapter;
+import com.android.smartShow.view.HorizontalListView;
 
-public class DeviceListActivity extends BaseActivity implements OnItemClickListener{
-    
-    private GridView mDeviceGridView;
+public class DeviceInfoActivity extends BaseActivity{
+    private Gallery mHorizontalListView = null;
+    private ListView mListView = null;
     
     @Override
     public void onBackPress(View arg0) {
@@ -36,7 +36,7 @@ public class DeviceListActivity extends BaseActivity implements OnItemClickListe
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.device_list);
+        setContentView(R.layout.device_info);
         super.onCreate(savedInstanceState);
     }
 
@@ -71,13 +71,26 @@ public class DeviceListActivity extends BaseActivity implements OnItemClickListe
     protected void initActionBar() {
         super.initActionBar();
         ActionBarManager.instance().getActionBar(ActionBarManager.DEVICE_ACTION_BAR, this)
-                .udpateActionBar(DeviceActionBar.DEVICE_LIST);
+                .udpateActionBar(DeviceActionBar.DEVICE_INFO);
     }
     @Override
     protected void initWidget() {
-        mDeviceGridView = (GridView) findViewById(R.id.device_gridview);
-        mDeviceGridView.setAdapter(new DeviceAdapter(getApplicationContext()));
-        mDeviceGridView.setOnItemClickListener(this);
+        mHorizontalListView = (Gallery) findViewById(R.id.device_info_gallery);
+        mHorizontalListView.setAdapter(new DeviceAdapter(getApplicationContext()));
+        mListView = (ListView) findViewById(R.id.device_info_listview);
+        
+        BaseAdapter listAdapter = new ModelAdapter(getApplicationContext(), null);
+        mListView.setAdapter(listAdapter);
+        
+        int totalHeight = 0;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            View listItem = listAdapter.getView(i, null, mListView);
+            listItem.measure(0, 0);
+            totalHeight += listItem.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = mListView.getLayoutParams();
+        params.height = totalHeight + (mListView.getDividerHeight() * (listAdapter.getCount() - 1));
+        mListView.setLayoutParams(params);
     }
 
     @Override
@@ -94,11 +107,5 @@ public class DeviceListActivity extends BaseActivity implements OnItemClickListe
 
     @Override
     protected void clearData() {
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int positon, long arg3) {
-        Intent intent = new Intent(this, DeviceInfoActivity.class);
-        startActivity(intent);
     }
 }
