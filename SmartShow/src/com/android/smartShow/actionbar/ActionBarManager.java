@@ -23,7 +23,7 @@ public class ActionBarManager {
                 break;
                 
             case ActionBarManager.DEVICE_ACTION_BAR:
-                mActionBar = new DeviceListActionBar(activity);
+                mActionBar = new DeviceActionBar(activity);
                 break;
 
             default:

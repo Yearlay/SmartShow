@@ -2,17 +2,23 @@ package com.android.smartShow.actionbar;
 
 import com.android.smartShow.R;
 import com.android.smartShow.activity.BaseActivity;
+import com.android.smartShow.activity.DeviceAddActivity;
 import com.android.smartShow.activity.DeviceListActivity;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.location.Address;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DeviceListActionBar extends BaseActionBar {
+public class DeviceActionBar extends BaseActionBar {
+    public static final int DEVICE_LIST = 1;
+    public static final int DEVICE_INFO = 2;
+    public static final int DEVICE_ADD = 3;
 
-    public DeviceListActionBar(BaseActivity activity) {
+    public DeviceActionBar(BaseActivity activity) {
         super(activity);
     }
 
@@ -30,8 +36,20 @@ public class DeviceListActionBar extends BaseActionBar {
         titleTextView.setTextColor(mActivity.getResources().getColor(R.color.fragment_title));
         
         imageViewLeft.setImageResource(R.drawable.back);
-        titleTextView.setText(R.string.devicelist_activity_name);
-        imageViewRight.setImageResource(R.drawable.add_device);
+        switch (stateValue) {
+            case DEVICE_LIST:
+                titleTextView.setText(R.string.devicelist_activity_name);
+                imageViewRight.setImageResource(R.drawable.add_device);
+                imageViewRight.setVisibility(View.VISIBLE);
+                break;
+                
+            case DEVICE_ADD:
+                titleTextView.setText(R.string.deviceadd_activity_name);
+                imageViewRight.setVisibility(View.INVISIBLE);
+
+            default:
+                break;
+        }
     }
 
     @Override
@@ -39,6 +57,21 @@ public class DeviceListActionBar extends BaseActionBar {
         switch (view.getId()) {
             case R.id.actionbar_image_left:
                 mActivity.onBackPressed();
+                break;
+            case R.id.actionbar_image_right:
+                Log.e("yearlay", "actionbar_image_right mStateValue: " + mStateValue);
+                Intent intent = null;
+                switch (mStateValue) {
+                    case DEVICE_LIST:
+                        intent = new Intent(mActivity, DeviceAddActivity.class);
+                        break;
+
+                    default:
+                        break;
+                }
+                if (intent != null) {
+                    mActivity.startActivity(intent);
+                }
                 break;
 
             default:

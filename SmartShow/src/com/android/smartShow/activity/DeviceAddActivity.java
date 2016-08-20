@@ -15,9 +15,7 @@ import com.android.smartShow.actionbar.DeviceActionBar;
 import com.android.smartShow.actionbar.MainActionBar;
 import com.android.smartShow.adapter.DeviceAdapter;
 
-public class DeviceListActivity extends BaseActivity{
-    
-    private GridView mDeviceGridView;
+public class DeviceAddActivity extends BaseActivity{
     
     @Override
     public void onBackPress(View arg0) {
@@ -33,7 +31,7 @@ public class DeviceListActivity extends BaseActivity{
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.device_list);
+        setContentView(R.layout.device_add);
         super.onCreate(savedInstanceState);
     }
 
@@ -68,12 +66,10 @@ public class DeviceListActivity extends BaseActivity{
     protected void initActionBar() {
         super.initActionBar();
         ActionBarManager.instance().getActionBar(ActionBarManager.DEVICE_ACTION_BAR, this)
-                .udpateActionBar(DeviceActionBar.DEVICE_LIST);
+                .udpateActionBar(DeviceActionBar.DEVICE_ADD);
     }
     @Override
     protected void initWidget() {
-        mDeviceGridView = (GridView) findViewById(R.id.device_gridview);
-        mDeviceGridView.setAdapter(new DeviceAdapter(getApplicationContext()));
     }
 
     @Override
