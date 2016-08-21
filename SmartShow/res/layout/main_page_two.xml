@@ -11,7 +11,7 @@
         android:weightSum="3" >
 
         <Button
-            android:id="@+id/model_type"
+            android:id="@+id/menu_first"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -25,7 +25,7 @@
             android:background="@color/text_color_low_dark" />
 
         <Button
-            android:id="@+id/model_class"
+            android:id="@+id/menu_second"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -39,7 +39,7 @@
             android:background="@color/text_color_low_dark" />
 
         <Button
-            android:id="@+id/model_color"
+            android:id="@+id/menu_third"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
