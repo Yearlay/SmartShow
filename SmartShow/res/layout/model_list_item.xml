@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:text="这是妹子"
+            android:text="这是美食"
             android:gravity="center_vertical"
             android:textColor="@color/text_color_high_dark"
             android:textSize="@dimen/list_title" />

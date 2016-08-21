@@ -85,25 +85,25 @@
 
     <!-- 测试数据 -->
     <string-array name="model_test">
-        <item>http://img1.mm131.com/pic/2330/1.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/2.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/3.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/4.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/5.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/6.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/7.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/8.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/9.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/10.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/11.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/12.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/13.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/14.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/15.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/16.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/17.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/18.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/19.jpg</item>
-        <item>http://img1.mm131.com/pic/2330/20.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/50/4D8S1D3F18LE.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/20/3QGYVTI2CN98.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/24/T3RCIR2379NV.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/39/B803X1H2C25J.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/44/GM6H96BBWQF8.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/06/0K0D3J3U358V.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/11/JI1151E88J61.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/49/BSE5Y8OJ09FQ.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/29/16I3TY8Z8M5X.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/55/H65072W542F3.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/00/0LHPGTOUJMS9.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/15/916950U9B5V6.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/196/34/3VY6V6BM7O78.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2016/150/55/1B86EY3V3969.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2014/231/05/756OCCRKAIE5.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2014/231/04/Q52AMB9A78EM.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2014/231/06/9O14RKUP4OM9.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2014/231/07/0US60H59X5L5.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2014/231/09/1U9JUXA9E96B.jpg</item>
+        <item>http://image.tianjimedia.com/uploadImages/2014/231/10/YO7YN4U3157U.jpg</item>
     </string-array>
 </resources>
