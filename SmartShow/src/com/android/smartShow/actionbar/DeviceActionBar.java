@@ -46,10 +46,12 @@ public class DeviceActionBar extends BaseActionBar {
             case DEVICE_ADD:
                 titleTextView.setText(R.string.deviceadd_activity_name);
                 imageViewRight.setVisibility(View.INVISIBLE);
+                break;
                 
             case DEVICE_INFO:
                 titleTextView.setText(R.string.deviceinfo_activity_name);
                 imageViewRight.setVisibility(View.INVISIBLE);
+                break;
 
             default:
                 break;
