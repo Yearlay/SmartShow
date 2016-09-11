@@ -32,12 +32,12 @@
     <string-array name="store_list">
         <item>门店一</item>
         <item>门店二</item>
-        <item>门店三</item>
-        <item>门店四</item>
-        <item>门店五</item>
-        <item>门店六</item>
-        <item>添加门店</item>
     </string-array>
+    <string name="add_store_button">添加门店</string>
+    <string name="add_store_title">请输入门店的名字</string>
+    
+    <string name="OK">确定</string>
+    <string name="CANCEL">取消</string>
     
     <string-array name="screen_list">
         <item>1大厅屏组</item>
