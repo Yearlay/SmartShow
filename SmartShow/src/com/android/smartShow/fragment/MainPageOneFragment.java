@@ -6,6 +6,8 @@ import java.util.Map;
 
 import com.android.smartShow.R;
 import com.android.smartShow.adapter.ScreenAdapter;
+import com.android.smartShow.adapter.StoreAdapter;
+import com.android.smartShow.utils.SoftwareConfig;
 import com.android.smartShow.view.StoreTitleView;
 
 import android.os.Bundle;
@@ -22,6 +24,7 @@ import android.widget.LinearLayout;
  */
 public class MainPageOneFragment extends BaseFragment 
             implements OnClickListener{
+    
     private LinearLayout mStoreListLinearLayout;
     
     private ArrayList<StoreTitleView> mStoreItemList;
@@ -83,7 +86,7 @@ public class MainPageOneFragment extends BaseFragment
     protected View initView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         View view = inflater.inflate(R.layout.main_page_one, container, false);
         mStoreListLinearLayout = (LinearLayout) view.findViewById(R.id.store_list_linearlayout);
-        
+        if (SoftwareConfig.isStoreListShow) {
         mStoreItemList = new ArrayList<StoreTitleView>();
         String[] storeListStr = getResources().getStringArray(R.array.store_list);
         for (String storeItemStr : storeListStr) {
@@ -98,9 +101,11 @@ public class MainPageOneFragment extends BaseFragment
         if (mStoreItemList.size() > 0) {
             setCurrentStoreTitleView(mStoreItemList.get(0));
         }
-        
+        } else {
+            mStoreListLinearLayout.setVisibility(View.GONE);
+        }
         mScreenGridView = (GridView) view.findViewById(R.id.screen_gridview);
-        mScreenGridView.setAdapter(new ScreenAdapter(getContext()));
+        mScreenGridView.setAdapter(new StoreAdapter(getContext()));
         
         return view;
     }
