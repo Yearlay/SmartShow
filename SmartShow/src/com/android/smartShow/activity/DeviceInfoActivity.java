@@ -73,23 +73,32 @@ public class DeviceInfoActivity extends BaseActivity{
         ActionBarManager.instance().getActionBar(ActionBarManager.DEVICE_ACTION_BAR, this)
                 .udpateActionBar(DeviceActionBar.DEVICE_INFO);
     }
+    
+    private ModelAdapter mAdapter;
+    private ModelAdapter.OnImageLoadListener mListener = new ModelAdapter.OnImageLoadListener() {
+        @Override
+        public void onImageLoad(int index) {
+            mAdapter.updateImage(mListView.getChildAt(index - mListView.getFirstVisiblePosition()), index);
+        }
+    };
+    
     @Override
     protected void initWidget() {
         mHorizontalListView = (Gallery) findViewById(R.id.device_info_gallery);
         mHorizontalListView.setAdapter(new DeviceAdapter(getApplicationContext()));
         mListView = (ListView) findViewById(R.id.device_info_listview);
         
-        BaseAdapter listAdapter = new ModelAdapter(getApplicationContext(), null);
-        mListView.setAdapter(listAdapter);
+        mAdapter = new ModelAdapter(getApplicationContext(), mListener);
+        mListView.setAdapter(mAdapter);
         
         int totalHeight = 0;
-        for (int i = 0; i < listAdapter.getCount(); i++) {
-            View listItem = listAdapter.getView(i, null, mListView);
+        for (int i = 0; i < mAdapter.getCount(); i++) {
+            View listItem = mAdapter.getView(i, null, mListView);
             listItem.measure(0, 0);
             totalHeight += listItem.getMeasuredHeight();
         }
         ViewGroup.LayoutParams params = mListView.getLayoutParams();
-        params.height = totalHeight + (mListView.getDividerHeight() * (listAdapter.getCount() - 1));
+        params.height = totalHeight + (mListView.getDividerHeight() * (mAdapter.getCount() - 1));
         mListView.setLayoutParams(params);
     }
 
