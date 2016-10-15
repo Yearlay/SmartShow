@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database
+    name="kindergarten"
+    version="1" >
+
+    <!-- 因为触发器的规则过于复杂，较难封装成接，添加触发器必须自己写SQL语句 -->
+    <!-- CREATE TRIGGER IF NOT EXISTS trigger_name AFTER insert|delete|update ON table_name BEGIN sub_sql1;sub_sql2;...;sub_sqln; END; -->
+    <trigger
+        name="trigger_name"
+        after_operation="insert|delete|update"
+        on_table="table_name" >
+
+        <!-- 子sql语句 -->
+        <sub_sql sql="INSERT INTO table_name(column_1,column_2,...,column_n) values(new.column_1,new.column_2,...,new.column_n);" />
+        <sub_sql sql="UPDATE table_name SET column1=new.column1,column2=old.column2... WHERE table_name.column = old.column |table_name.column = new.column;" />
+        <sub_sql sql="DELETE FROM table_name WHERE table_name.column = old.column;" />
+    </trigger>
+
+</database>

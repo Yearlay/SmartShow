@@ -2,12 +2,8 @@ package com.android.smartShow.actionbar;
 
 import com.android.smartShow.R;
 import com.android.smartShow.activity.BaseActivity;
-import com.android.smartShow.activity.DeviceListActivity;
-import com.android.smartShow.activity.MainActivity;
 import com.android.smartShow.adapter.StoreData;
 import com.android.smartShow.adapter.StoreData.StoreDataInfo;
-import com.android.smartShow.fragment.MainPageOneFragment;
-import com.project.template.utils.Log;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;

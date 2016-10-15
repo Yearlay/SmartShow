@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 数据库名称和数据库版本号，如数据库有更新，则该版本号与datebase_upgrade.xml中的版本号保持一致 -->
+<database name="heartguard" version="1">
+    <!-- 1. 数据库表 t_account-->
+    <!-- 2. 版本号是 0： -->
+    <table name="t_account" update="0">
+        <column name="uuid" default_value="" not_null="0" type="TEXT" unique="0" />
+        <column name="usercode" default_value="" not_null="0" type="TEXT" unique="0" />
+        <column name="password" default_value="" not_null="0" type="TEXT" unique="0" />
+        <column name="type" default_value="" not_null="0" type="INTEGER" unique="0" />
+        <column name="registertime" default_value="" not_null="0" type="TEXT" unique="0" />
+    </table>
+    
+    <table name="t_personinfo " update="0">
+        <column name="uuid" default_value="" not_null="0" type="TEXT" unique="0" />
+    </table>
+    
+    <!-- 数据字典表 含有病史，职业等字典信息 -->
+    <table name="t_data_dictionary" update="0">
+        <column name="itemname" default_value="" not_null="0" type="TEXT" unique="0" />
+        <column name="propertyid" default_value="" not_null="0" type="TEXT" unique="0" />
+        <column name="orderby" default_value="" not_null="0" type="INTEGER" unique="0" />
+    </table>
+
+    <!-- 预定义问题列表信息 -->
+    <table name="t_question_content" update="0">
+        <column name="question_num" default_value="" not_null="0" type="TEXT" unique="0" />
+        <column name="question_content" default_value="" not_null="0" type="TEXT" unique="0"/>
+        <column name="question_opts" default_value="" not_null="0" type="TEXT" unique="0" />
+        <column name="question_type" default_value="" not_null="" type="INTEGER" unique="0"/>
+        <column name="question_ans" default_value="" not_null="" type="TEXT" unique="0" />
+    </table>
+
+    <table name="t_task" update="0">
+      <column name="uuid" default_value="" not_null="1" type="TEXT" unique="0" />
+      <column name="task_time" default_value="0" not_null="0" type="INTEGER" unique="0" />
+      <column name="task_type" default_value="0" not_null="1" type="INTEGER" unique="0" />
+      <column name="task_title" default_value="" not_null="0" type="TEXT" unique="0" />
+      <column name="task_info" default_value="" not_null="0" type="TEXT" unique="0" />
+      <column name="time" default_value="0" not_null="0" type="INTEGER" unique="0" />
+      <column name="alarm" default_value="0" not_null="1" type="INTEGER" unique="0" />
+      <column name="done" default_value="0" not_null="1" type="INTEGER" unique="0" />
+    </table>
+
+    <table name="t_treatment" update="0">
+        <column name="uuid" default_value="" not_null="1" type="TEXT" unique="0" />
+        <column name="name" default_value="0" not_null="0" type="TEXT" unique="0" />
+        <column name="start_time" default_value="0" not_null="0" type="INTEGER" unique="0" />
+        <column name="end_time" default_value="0" not_null="0" type="INTEGER" unique="0" />
+        <column name="frequency" default_value="0" not_null="0" type="INTEGER" unique="0" />
+    </table>
+
+    <table name="t_medicine_dosage" update="0">
+        <column name="uuid" default_value="" not_null="1" type="TEXT" unique="0" />
+        <column name="time" default_value="0" not_null="0" type="INTEGER" unique="0" />
+        <column name="dosage" default_value="0" not_null="0" type="INTEGER" unique="0" />
+        <column name="group_id" default_value="0" not_null="0" type="INTEGER" unique="0" />
+    </table>
+</database>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 指明数据库名称、升级后的版本号 -->
+<database name="heartguard" version="1" >
+    <!--数据字典默认标内容-->
+    <sql-prev content="INSERT INTO t_data_dictionary
+        (_ID, ITEMNAME, PROPERTYID, ORDERBY)
+        VALUES ">
+        <sql-suffix content="(7,'糖尿病','bs1',0);" />
+        <sql-suffix content="(8,'高血压','bs2',0);" />
+        <sql-suffix content="(9,'冠心病','bs3',0);" />
+        <sql-suffix content="(10,'心绞痛','bs4',0);" />
+        <sql-suffix content="(11,'心肌梗死','bs5',0);" />
+        <sql-suffix content="(12,'肺结核','bs6',0);" />
+        <sql-suffix content="(25,'高血压','jzbs1',0);" />
+        <sql-suffix content="(26,'糖尿病','jzbs2',0);" />
+        <sql-suffix content="(27,'冠心病','jzbs3',0);" />
+        <sql-suffix content="(28,'心绞痛','jzbs4',0);" />
+    </sql-prev>
+    <sql-prev content = "INSERT INTO t_question_content
+        (QUESTION_NUM, QUESTION_CONTENT, QUESTION_OPTS, QUESTION_TYPE)
+        VALUES ">
+        <sql-suffix content="('q11', '1.你平时的工作压力描述', 'a:轻松|b:适度|c:繁重', 1);" />
+        <sql-suffix content="('q12', '2.你一般睡眠多少时间', 'a:大于等于8小时|b:6到8小时|c:小于6小时', 1);" />
+        <sql-suffix content="('q13', '3.经常熬夜工作吗', 'a:从不|b:偶尔|c:经常', 1);" />
+        <sql-suffix content="('q14', '你喜欢的运动有哪些', 'a:球类|b:散步:c:跑步|d:骑单车', 5);" />
+        <sql-suffix content="('q15', '你喜欢的运动有哪些', 'a:台球|b:乒乓球|c:排球|d:足球e:篮球f:网球g:保龄球h:高尔夫球', 3);" />
+        <sql-suffix content="('q16', '你喜欢的运动有哪些', 'a:散步|b:慢速步行|c:中速步行|d:快走|e:疾风步', 3);" />
+        <sql-suffix content="('q17', '你喜欢的运动有哪些', 'a:小步慢跑|b:慢速跑步|c:中速跑步|d:快速跑步', 3);" />
+        <sql-suffix content="('q18', '你喜欢的运动有哪些', 'a:低俗骑单车|b:慢速骑单车|c:中速骑单车|d:告诉骑单车', 3);" />
+        <sql-suffix content="('q19', '你喜欢的运动有哪些', 'a:滑雪|b:滑冰|c:器械锻炼|d:太极|e:跳绳|f:爬山|g:瑜伽|h:园艺|i:家务|j:钓鱼', 3);" />" />
+        <sql-suffix content="('q30', '你平时是否抽烟', 'a:是b:否', 1);" />
+        <sql-suffix content="('q31', '1.你平均媒体吸多少根烟', 'a:小于10根|b:10到20根|c:20根以上', 1);" />
+        <sql-suffix content="('q32', '2.你是否大口抽烟', 'a:从不|b:有时|c:总是', 1);" />
+        <sql-suffix content="('q33', '3.你是否在早晨抽烟多', 'a:是|b:否', 1);" />
+        <sql-suffix content="('q34', '4.你醒后多久抽第一支烟', 'a:大于30分钟|b:30分钟之内', 1);" />
+        <sql-suffix content="('q35', '5.一天哪一只烟最难舍弃', 'a:第一支|b:其他', 1);" />
+        <sql-suffix content="('q36', '6.在禁烟场所是否难抑烟瘾如图书馆，医院，商场等', 'a:是|b:否', 1);" />
+        <sql-suffix content="('q37', '7.你是否患病卧床时还要抽烟', 'a:是|b:否', 1);" />
+        <sql-suffix content="('q38', '1.你平常喝哪些酒', 'a:白酒:|b:红酒|c:啤酒|d:其他', 1);" />
+        <sql-suffix content="('q39', '2.你每天的白酒摄入量 50ML白酒=250ML红酒=750ML啤酒', 'a:50ML之内|b:50到100ML|c:大于100ML', 1);" />" />
+        <sql-suffix content="('q50', '你平时的饮食偏重包含哪些', 'a:荤类|b:素食c:油炸d:辛辣e:嗜甜f:嗜咸', 3);" />
+        <sql-suffix content="('q51', '1.你的睡眠时间符合下面哪种情况', 'a:保持在6-12小时|b:大于12小时|c:小于6小时', 1);" />
+        <sql-suffix content="('q52', '2.你夜里一般几点睡觉', 'a:0点之前|b:0点之后', 1);" />
+        <sql-suffix content="('q53', '睡眠小于6个小时原因', 'a:入睡困难|b:早醒c:惊醒d:梦魇', 3);" />
+        <sql-suffix content="('q54', '你的家族病史有哪些', 'a:高血压|b:糖尿病|c:冠心病|d:心绞痛|e:心肌梗死|f:肺心病|g:心衰|h:先天性心脏病|i:肥胖与代谢综合症', 3);" />
+        <sql-suffix content="('q55', '你的个人病史有哪些', 'a:高血压|b:糖尿病|c:冠心病|d:心绞痛|e:心肌梗死|f:肺结核|g:病毒性肝炎|h:肝硬化|i:脂肪肝|j:胃炎|k:肾炎|l:尿毒|m:贫血|n:甲亢|o:低血糖|p:痛风|q:骨折及其他外伤|r:肥胖与代谢综合症', 3);" />
+        <sql-suffix content="('q56', '你的三年内手术史有哪些', 'a:拔牙|b:骨折手术固定|c:整容美容|d:甲状腺手术|e:胃部手术|f:肝脏手术|g:直肠及肛门手术', 3);" />"/>
+    </sql-prev>
+    <sql-prev content="INSERT INTO t_task
+        (uuid, task_time, task_type, task_title, task_info, time, alarm, done)
+        VALUES ">
+        <sql-suffix content="(1, 1156993680000, 1001, '降压药:3粒', '饭后半小时吃药', 1156993680000, 1, 0);" />
+        <sql-suffix content="(1, 1156997280000, 2001, '食物:忌辛辣', '多吃水果', 1156997280000, 1, 0);" />
+        <sql-suffix content="(1, 1157000880000, 1001, '降压药:3粒', '饭后半小时吃药', 1157000880000, 1, 0);" />
+        <sql-suffix content="(1, 1157004480000, 3001, '瑜伽:30分钟', '好好享受生活吧', 1157004480000, 1, 0);" />
+        <sql-suffix content="(1, 1157008080000, 1001, '降压药:3粒', '饭后半小时吃药', 1157008080000, 1, 0);" />
+    </sql-prev>
+    <sql-prev content="INSERT INTO t_treatment
+        (uuid, name, start_time, end_time, frequency)
+        VALUES ">
+        <sql-suffix content="(1, '青霉素', 1156993680000, 1156997280000, 3);" />
+        <sql-suffix content="(1, '阿莫西林', 1157000880000, 1157004480000, 3);" />
+    </sql-prev>
+    <sql-prev content="INSERT INTO t_medicine_dosage
+        (uuid, time, dosage, group_id)
+        VALUES ">
+        <sql-suffix content="(1, -1800000, 3, 1);" />
+        <sql-suffix content="(1, 1800000, 3, 1);" />
+        <sql-suffix content="(1, 3600000, 3, 1);" />
+        <sql-suffix content="(1, -1800000, 3, 2);" />
+        <sql-suffix content="(1, 3600000, 3, 2);" />
+        <sql-suffix content="(1, 1800000, 1, 2);" />
+    </sql-prev>
+</database>
