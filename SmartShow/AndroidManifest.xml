@@ -39,6 +39,12 @@
         </activity>
         
         <activity
+            android:name=".activity.ScreenManagerActivity"
+            android:label="@string/screen_manager_of_store_title"
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
             android:name=".activity.DeviceListActivity"
             android:label="@string/devicelist_activity_name"
             android:screenOrientation="portrait">

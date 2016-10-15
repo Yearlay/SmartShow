@@ -10,6 +10,11 @@ import android.widget.Button;
 
 import com.android.smartShow.R;
 
+/**
+ * 注册界面
+ * @author yelei
+ *
+ */
 public class RegisterActivity extends BaseActivity{
     
     private Button mRegisterButton;

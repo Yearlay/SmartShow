@@ -7,18 +7,15 @@ import com.android.smartShow.activity.DeviceListActivity;
 
 import android.app.ActionBar;
 import android.content.Intent;
-import android.location.Address;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DeviceActionBar extends BaseActionBar {
-    public static final int DEVICE_LIST = 1;
-    public static final int DEVICE_INFO = 2;
-    public static final int DEVICE_ADD = 3;
+public class ScreenActionBar extends BaseActionBar {
+    public static final int SCREEN_LIST = 1;
 
-    public DeviceActionBar(BaseActivity activity) {
+    public ScreenActionBar(BaseActivity activity) {
         super(activity);
     }
 
@@ -37,20 +34,10 @@ public class DeviceActionBar extends BaseActionBar {
         
         imageViewLeft.setImageResource(R.drawable.back);
         switch (stateValue) {
-            case DEVICE_LIST:
-                titleTextView.setText(R.string.devicelist_activity_name);
-                imageViewRight.setImageResource(R.drawable.add_device);
+            case SCREEN_LIST:
+                titleTextView.setText(R.string.screen_manager_of_store_title);
+                imageViewRight.setImageResource(R.drawable.device_list);
                 imageViewRight.setVisibility(View.VISIBLE);
-                break;
-                
-            case DEVICE_ADD:
-                titleTextView.setText(R.string.deviceadd_activity_name);
-                imageViewRight.setVisibility(View.INVISIBLE);
-                break;
-                
-            case DEVICE_INFO:
-                titleTextView.setText(R.string.deviceinfo_activity_name);
-                imageViewRight.setVisibility(View.INVISIBLE);
                 break;
 
             default:
@@ -68,8 +55,8 @@ public class DeviceActionBar extends BaseActionBar {
                 Log.e("yearlay", "actionbar_image_right mStateValue: " + mStateValue);
                 Intent intent = null;
                 switch (mStateValue) {
-                    case DEVICE_LIST:
-                        intent = new Intent(mActivity, DeviceAddActivity.class);
+                    case SCREEN_LIST:
+                        intent = new Intent(mActivity, DeviceListActivity.class);
                         break;
 
                     default:

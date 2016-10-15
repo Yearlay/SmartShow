@@ -7,20 +7,28 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
+import android.widget.AdapterView.OnItemClickListener;
 
 import com.android.smartShow.R;
+import com.android.smartShow.actionbar.ActionBarManager;
+import com.android.smartShow.actionbar.DeviceActionBar;
+import com.android.smartShow.actionbar.MainActionBar;
+import com.android.smartShow.actionbar.ScreenActionBar;
+import com.android.smartShow.adapter.DeviceAdapter;
+import com.android.smartShow.adapter.ScreenAdapter;
 
 /**
- * 登录界面
+ * 门店内的屏幕管理的
  * @author yelei
  *
  */
-public class LoginActivity extends BaseActivity{
+public class ScreenManagerActivity extends BaseActivity implements OnItemClickListener{
     
-    private Button mLoginButton;
-    private Button mRegisterButton;
-
+    private GridView mScreenGridView;
+    
     @Override
     public void onBackPress(View arg0) {
     }
@@ -35,7 +43,7 @@ public class LoginActivity extends BaseActivity{
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.login_ativity);
+        setContentView(R.layout.device_list);
         super.onCreate(savedInstanceState);
     }
 
@@ -67,34 +75,24 @@ public class LoginActivity extends BaseActivity{
     }
 
     @Override
+    protected void initActionBar() {
+        super.initActionBar();
+        ActionBarManager.instance().getActionBar(ActionBarManager.SCREEN_ACTION_BAR, this)
+                .udpateActionBar(ScreenActionBar.SCREEN_LIST);
+    }
+    @Override
     protected void initWidget() {
-        mLoginButton = (Button) findViewById(R.id.login_button);
-        mRegisterButton = (Button) findViewById(R.id.register_button);
+        mScreenGridView = (GridView) findViewById(R.id.device_gridview);
+        mScreenGridView.setAdapter(new ScreenAdapter(getApplicationContext()));
+        mScreenGridView.setOnItemClickListener(this);
     }
 
     @Override
     protected void initListener() {
-        bindOnClickLister(this, mLoginButton, mRegisterButton);
     }
 
     @Override
     public void onClick(View view) {
-        Intent intent = null;
-        switch (view.getId()) {
-            case R.id.login_button:
-                intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                finish();
-                break;
-                
-            case R.id.register_button:
-                intent = new Intent(this, RegisterActivity.class);
-                startActivity(intent);
-                break;
-
-            default:
-                break;
-        }
     }
     
     @Override
@@ -103,5 +101,9 @@ public class LoginActivity extends BaseActivity{
 
     @Override
     protected void clearData() {
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int positon, long arg3) {
     }
 }

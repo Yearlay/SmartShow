@@ -10,6 +10,11 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 
+/**
+ * 欢迎界面
+ * @author yelei
+ *
+ */
 public class WelcomeActivity extends BaseActivity {
 
     private static final int JUMP_DELAY = 1500;

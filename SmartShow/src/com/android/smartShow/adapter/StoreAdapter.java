@@ -2,9 +2,9 @@ package com.android.smartShow.adapter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.zip.Inflater;
 
 import com.android.smartShow.R;
+import com.android.smartShow.adapter.StoreData.StoreDataInfo;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,15 +18,8 @@ public class StoreAdapter extends BaseAdapter{
     private List<StoreDataInfo> mData;
     private Context mContext;
     public StoreAdapter(Context context) {
-        mData = new ArrayList<StoreDataInfo>();
-        StoreDataInfo storeDataInfo;
         mContext = context;
-        for(int i = 0; i < 10;i++) {
-            storeDataInfo = new StoreDataInfo();
-            storeDataInfo.mStoreName = "测试门店";
-            storeDataInfo.mStoreDrawable = mContext.getResources().getDrawable(R.drawable.store);
-            mData.add(storeDataInfo);
-        }
+        mData = StoreData.instance(context).getData();
     } 
     @Override
     public int getCount() {

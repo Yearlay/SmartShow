@@ -4,10 +4,16 @@ import com.android.smartShow.R;
 import com.android.smartShow.activity.BaseActivity;
 import com.android.smartShow.activity.DeviceListActivity;
 import com.android.smartShow.activity.MainActivity;
+import com.android.smartShow.adapter.StoreData;
+import com.android.smartShow.adapter.StoreData.StoreDataInfo;
+import com.android.smartShow.fragment.MainPageOneFragment;
+import com.project.template.utils.Log;
 
 import android.app.ActionBar;
-import android.content.Intent;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,7 +42,7 @@ public class MainActionBar extends BaseActionBar {
             case MAIN_PAGE_ONE:
                 imageViewLeft.setImageResource(R.drawable.main_page_one);
                 titleTextView.setText(R.string.main_page_hotseat_one_message);
-                imageViewRight.setImageResource(R.drawable.device_list);
+                imageViewRight.setImageResource(R.drawable.add_device);
                 imageViewRight.setVisibility(View.VISIBLE);
                 break;
             case MAIN_PAGE_TWO:
@@ -76,8 +82,27 @@ public class MainActionBar extends BaseActionBar {
     private void onClickFromPageOne(View view) {
         switch (view.getId()) {
             case R.id.actionbar_image_right:
-                Intent intent = new Intent(mActivity, DeviceListActivity.class);
-                mActivity.startActivity(intent);
+                final EditText editText = new EditText(mActivity);
+                new AlertDialog.Builder(mActivity)
+                .setTitle(R.string.add_store_title)
+                .setView(editText)
+                .setPositiveButton(R.string.OK, 
+                        new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int which) {
+                                StoreDataInfo storeDataInfo = new StoreDataInfo();
+                                storeDataInfo.mStoreName = editText.getText().toString();
+                                storeDataInfo.mStoreDrawable = mActivity.getResources().getDrawable(R.drawable.store);
+                                StoreData.instance(mActivity).getData().add(storeDataInfo);
+                            }
+                        }
+                )
+                .setNegativeButton(R.string.CANCEL, 
+                        new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .show();
                 break;
 
             default:
