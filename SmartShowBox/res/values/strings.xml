@@ -1,5 +1,14 @@
 <resources>
 
     <string name="app_name">数拓商显</string>
+    
+    <string name="init_title_message">数拓商用显示平台</string>
+    <string name="device_info_title">设备信息</string>
+    <string name="device_serial_number">屏幕序列号        123456789</string>
+    <string name="device_software_version">版本号        1.0.0</string>
+    <string name="device_display_type">海报类型        迎宾海报</string>
+    <string name="device_screen_orientation">屏幕方向        横屏</string>
+    <string name="scan_download_software_title">扫描下载手机端软件</string>
+    <string name="scan_bind_device_title">扫描绑定设备</string>
 
 </resources>

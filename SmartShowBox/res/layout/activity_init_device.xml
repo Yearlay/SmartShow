@@ -1,0 +1,72 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/init_title_message"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"/>
+    
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+        
+        <include layout="@layout/activity_init_device_info" />"
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_download_software_title"/>
+	        <ImageView 
+	            android:id="@+id/scan_download_software"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content"
+	            android:padding="10dp"
+	            android:src="@drawable/barcode_demo"/>
+        </LinearLayout>
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <TextView android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/scan_bind_device_title"/>
+	        <ImageView
+	            android:id="@+id/scan_bind_device"
+	            android:layout_height="wrap_content"
+	            android:layout_width="wrap_content"
+	            android:padding="10dp"
+	            android:src="@drawable/barcode_demo"/>
+            </LinearLayout>
+    </LinearLayout>
+    
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/show_init_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="模拟显示默认任务"/>
+        <Button
+            android:id="@+id/show_real_task"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="模拟显示展示任务"/>
+    </LinearLayout>
+
+</RelativeLayout>

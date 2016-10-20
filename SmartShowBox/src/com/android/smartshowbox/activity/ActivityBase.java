@@ -19,7 +19,7 @@ import com.project.template.ui.utils.HandlerCache;
 import com.project.template.ui.utils.HandlerInterface;
 import com.project.template.ui.utils.TemplateHandler;
 
-public abstract class BaseActivity extends FragmentActivity
+public abstract class ActivityBase extends FragmentActivity
         implements OnClickListener, RequestCallback, HandlerInterface {
     
     
@@ -226,7 +226,7 @@ public abstract class BaseActivity extends FragmentActivity
     /**
      * <b>Description:</b> <br/>
      * 当关键数据发生改变可以调用此方法。<br/>
-     * 在 {@link BaseActivity#onStart()}中也调用了此方法。
+     * 在 {@link ActivityBase#onStart()}中也调用了此方法。
      */
     protected abstract void refreshView();
 
@@ -237,7 +237,7 @@ public abstract class BaseActivity extends FragmentActivity
     
     /**
      * <b>Description:</b> 清空数据。<br/>
-     * 在{@link BaseActivity#onDestroy()}中调用了此方法。
+     * 在{@link ActivityBase#onDestroy()}中调用了此方法。
      */
     protected abstract void clearData();
 }
