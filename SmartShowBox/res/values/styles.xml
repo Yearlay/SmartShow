@@ -16,5 +16,17 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="notitle" parent="android:Theme.Light">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@style/AnimationActivity</item>
+    </style>
+    
+    <style name="AnimationActivity" >
+        <item name="android:activityOpenEnterAnimation">@anim/activity_open_enter</item>  
+        <item name="android:activityOpenExitAnimation">@anim/activity_open_exit</item>  
+        <item name="android:activityCloseEnterAnimation">@anim/activity_close_enter</item>  
+        <item name="android:activityCloseExitAnimation">@anim/activity_close_exit</item>  
+    </style>
 
 </resources>
