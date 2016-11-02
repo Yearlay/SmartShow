@@ -70,48 +70,10 @@ public class OnePieceAsyncHttpClient extends AsyncHttpClient {
 
     public void post(Context context, DataRequest request) {
         Log.i(TAG, "doPostRequestWithJson -> request = " + request);
-        int fileListSize = request.requestBean.getFileListSize();
-        if (fileListSize == 0) {
-            try {
-                PostBean postBean = new PostBean(request.requestBean, fileListSize);
-                Log.d(TAG, postBean.toGsonString());
-                HttpEntity entity = new StringEntity(postBean.toGsonString(),
-                        Config.JSON_CHARSET);
-                post(context, request.url, entity, CONTENT_TYPE,
-                        new OnePieceAsyncHttpResponseHandler(request));
-            } catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
-        } else if (fileListSize > 0) {
-            postForUploadFile(context, request);
+        HttpEntity entity = request.getEntity();
+        if (entity != null) {
+            post(context, request.url, entity, CONTENT_TYPE,
+                    new OnePieceAsyncHttpResponseHandler(request));
         }
-    }
-
-    /** 带参数上传文件 */
-    public void postForUploadFile(Context context, final DataRequest request) {
-        Log.i(TAG, "doPostRequestWithParamsForFile -> request = " + request);
-        // 用来存放参数的容器，类似AsyncHttpClient 封装的RequestParams
-        MultipartEntity entity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
-        // 封装json协议（视具体接口而定）
-        try {
-            PostBean postBean = new PostBean(request.requestBean,
-                    request.requestBean.getFileListSize());
-            Log.d(TAG, postBean.toGsonString());
-            StringBody requestBody = new StringBody(postBean.toGsonString(),
-                    Charset.forName(Config.JSON_CHARSET));
-            entity.addPart(Config.JSON_BODY_KEY, requestBody);
-        } catch (UnsupportedEncodingException e) {
-            request.handlerError(e, ErrorCode.ENCODE_ERROR_MESSAGE);
-        }
-        // 将 "file":{stringBody} 添加到entity里面。
-        if (request.requestBean.getFileList() != null) {
-            for (int i = 0; i < request.requestBean.getFileList().size(); i++) {
-                String partKeyName = Config.JSON_FILE + i;
-                entity.addPart(partKeyName, 
-                        new FileBody(request.requestBean.getFileList().get(i)));
-            }
-        }
-        post(context, request.url, entity, null,
-                new OnePieceAsyncHttpResponseHandler(request));
     }
 }
